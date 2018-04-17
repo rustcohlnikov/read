@@ -1,7 +1,5 @@
 # Vincent
-Another useless React blog
-
-Built with [React](https://github.com/facebook/react), [Strapi](https://github.com/strapi/strapi/) & [Bulma](https://github.com/jgthms/bulma)
+Another useless blog built with [React](https://github.com/facebook/react), [Strapi](https://github.com/strapi/strapi/) & [Bulma](https://github.com/jgthms/bulma)
 
 ## Setup
 Check config files
