@@ -1,12 +1,11 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import Index from '../templates/Index'
 import View from '../templates/View'
-import NotFound from '../templates/NotFound'
 
 const AppRouter = () => (
 	<BrowserRouter>
@@ -17,7 +16,7 @@ const AppRouter = () => (
 					<Switch>
 						<Route path="/" component={Index} exact={true} />
 						<Route path="/post/:id" component={View} />
-						<Route component={NotFound} />
+						<Redirect from='*' to='/' />
 					</Switch>
 				</div>
 			</section>
