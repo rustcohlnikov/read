@@ -1,6 +1,6 @@
 import axios from 'axios'
-import mock from './mock'
 
+//TODO: add config
 const client = axios.create({
 	baseURL: 'https://jsonplaceholder.typicode.com/'
 })

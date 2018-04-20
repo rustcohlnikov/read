@@ -1,6 +1,5 @@
 import client from '../../plugins/client'
 import * as actionType from './actionTypes'
-import mock from '../../plugins/client/mock'
 
 export const loadPosts = () => {	
 	return function (dispatch) {
