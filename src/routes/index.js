@@ -11,11 +11,11 @@ const AppRouter = () => (
 	<BrowserRouter>
 		<div>
 			<div className="container">
-				<div class="row center-xs">
-					<div class="col-xs-8">
+				<div className="row center-xs">
+					<div className="col-xs-8">
 						<Header/>
-						<div class="row start-xs">
-							<div class="col-xs">
+						<div className="row start-xs">
+							<div className="col-xs">
 								<Switch>
 									<Route path="/" component={Index} exact={true} />
 									<Route path="/post/:id" component={View} />

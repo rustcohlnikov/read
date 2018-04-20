@@ -8,7 +8,7 @@ class Post extends Component {
 		return (
 			<div className="post">
 				<div className="post__heading">
-					<small class="text-muted">10/05/2018</small>
+					<small className="text-muted">10/05/2018</small>
 					<h2 className="post__title">
 						<Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
 					</h2>
