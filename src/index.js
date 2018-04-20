@@ -4,14 +4,16 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import AppRouter from './routes'
-import initStore from './store/initStore'
+import configureStore from './store/configureStore'
+import {loadPosts} from './store/actions/posts'
 
-import 'bulma/css/bulma.css'
 import './styles/App.css'
 
 import registerServiceWorker from './registerServiceWorker'
 
-const store = initStore()
+const store = configureStore()
+store.dispatch(loadPosts())
+
 const jsx = (
 	<Provider store={store}>
 		<AppRouter/>

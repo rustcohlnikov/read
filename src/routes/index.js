@@ -1,42 +1,12 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-import PostContainer from '../components/PostContainer'
-import About from '../components/About'
-import Post from '../components/Post'
-import NotFound from '../components/NotFound'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-const Header = () => (
-	<header className="container">
-		<nav className="level">
-			<div className="level-left">
-				<p className="level-item">
-					<span className="title">RL/RN</span>
-				</p>
-			</div>
-			<div className="level-right">
-				<p className="level-item">
-					<NavLink activeClassName="link is-active" to="/" exact={true}>Home</NavLink>
-				</p>					
-				<p className="level-item">
-					<NavLink activeClassName="link is-active" to="/about">About</NavLink>
-				</p>
-			</div>
-		</nav>
-	</header>
-)
-
-const Footer = () => (
-	<footer className="footer">
-		<div className="container">
-			<div className="content has-text-centered">
-				<p>
-					Made with <strong>love</strong> in Almaty
-				</p>
-			</div>
-		</div>
-	</footer>
-)
+import Index from '../templates/Index'
+import View from '../templates/View'
+import NotFound from '../templates/NotFound'
 
 const AppRouter = () => (
 	<BrowserRouter>
@@ -45,9 +15,8 @@ const AppRouter = () => (
 			<section className="section">
 				<div className="container">
 					<Switch>
-						<Route path="/" component={PostContainer} exact={true} />
-						<Route path="/post/:id" component={Post} />
-						<Route path="/about" component={About} />
+						<Route path="/" component={Index} exact={true} />
+						<Route path="/post/:id" component={View} />
 						<Route component={NotFound} />
 					</Switch>
 				</div>
