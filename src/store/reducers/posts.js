@@ -5,7 +5,7 @@ export default (state = defaultState.items, action) => {
 	switch(action.type) {
 	case actionType.LOAD_POSTS_BEGIN:
 		return {
-			posts: [],
+			items: [],
 			loading: true
 		}
 	case actionType.LOAD_POSTS_SUCCESS:
