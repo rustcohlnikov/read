@@ -1,4 +1,5 @@
 export default {
 	items: [],
-	loading: false
+	loading: false,
+	error: false
 }

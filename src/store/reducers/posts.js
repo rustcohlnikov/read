@@ -6,12 +6,18 @@ export default (state = defaultState.items, action) => {
 	case actionType.LOAD_POSTS_BEGIN:
 		return {
 			items: [],
-			loading: true
+			loading: true,
+			error: false
 		}
 	case actionType.LOAD_POSTS_SUCCESS:
 		return {
 			items: action.posts,
-			loading: false
+			loading: false,
+			error: false
+		}
+	case actionType.LOAD_POSTS_ERROR:
+		return {
+			error: true
 		}
 	default: 
 		return state

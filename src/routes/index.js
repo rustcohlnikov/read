@@ -20,6 +20,7 @@ const AppRouter = () => (
 					</Switch>
 				</div>
 			</section>
+			<Footer/>
 		</div>
 	</BrowserRouter>
 )

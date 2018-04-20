@@ -6,9 +6,10 @@ import Post from './Post'
 
 const PostsList = (props) => (
 	<div>
+		<p>{props.error ? 'Error' : null}</p>
 		<p>{props.loading ? 'loading...' : null}</p>
 		{
-			!props.loading && props.posts.length > 0 && props.posts.map((post) => {
+			(!props.loading && !props.error && props.posts.length > 0) && props.posts.map((post) => {
 				return (<Post key={post.id} {...post} />)
 			})
 		}
@@ -18,6 +19,7 @@ const PostsList = (props) => (
 export default connect(
 	(state) => ({
 		posts: state.posts.items,
-		loading: state.posts.loading
+		loading: state.posts.loading,
+		error: state.posts.error
 	})
 )(PostsList)

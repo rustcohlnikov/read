@@ -9,6 +9,9 @@ export const loadPosts = () => {
 			.then(response => {
 				dispatch(loadPostsSuccess(response.data))
 			})
+			.catch(error => {
+				dispatch(loadPostsError(error))
+			})
 	}
 }
 
@@ -22,5 +25,11 @@ export function loadPostsSuccess(posts) {
 export function loadPostsBegin(posts) {
 	return {
 		type: actionType.LOAD_POSTS_BEGIN
+	}
+}
+
+export function loadPostsError(posts) {
+	return {
+		type: actionType.LOAD_POSTS_ERROR
 	}
 }

@@ -8,6 +8,7 @@ import configureStore from './store/configureStore'
 import {loadPosts} from './store/actions/posts'
 
 import './styles/App.css'
+import 'flexboxgrid/dist/flexboxgrid.css'
 
 import registerServiceWorker from './registerServiceWorker'
 

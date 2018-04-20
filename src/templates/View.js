@@ -9,9 +9,6 @@ const View = (props) => (
 		<p>
 			{ props.body }
 		</p>
-		<small>
-    ID: {props.match.params.id}
-		</small>
 	</div>
 )
 export default connect(
