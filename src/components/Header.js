@@ -1,14 +1,11 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
 
 export default () => (
-	<header className="header container">
-		<div className="row center-xs">
-			<div className="col-xs">
-				<div className="box">
-					<a className="header__item text-muted" href="#">Link</a>
-					<NavLink className="logo" to="/" exact={true}>Logo</NavLink>
-					<a className="header__item text-muted" href="#">Link</a>
+	<header className="header">
+		<div className="row middle-xs between-xs">
+			<div className="col-xs-2">
+				<div className="row start-xs middle-xs">
+					<a href="http://reler.in" className="logo">R.</a>
 				</div>
 			</div>
 		</div>

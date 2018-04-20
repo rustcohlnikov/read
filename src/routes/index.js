@@ -10,16 +10,22 @@ import View from '../templates/View'
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
-			<Header/>
-			<section className="section">
-				<div className="container">
-					<Switch>
-						<Route path="/" component={Index} exact={true} />
-						<Route path="/post/:id" component={View} />
-						<Redirect from='*' to='/' />
-					</Switch>
+			<div className="container">
+				<div class="row center-xs">
+					<div class="col-xs-8">
+						<Header/>
+						<div class="row start-xs">
+							<div class="col-xs">
+								<Switch>
+									<Route path="/" component={Index} exact={true} />
+									<Route path="/post/:id" component={View} />
+									<Redirect from='*' to='/' />
+								</Switch>
+							</div>
+						</div>
+					</div>
 				</div>
-			</section>
+			</div>
 			<Footer/>
 		</div>
 	</BrowserRouter>
