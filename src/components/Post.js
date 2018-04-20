@@ -11,7 +11,7 @@ class Post extends Component {
 					{this.props.title}
 				</h2>
 				<div className="post__body">
-					{renderHTML(this.props.content)}
+					{renderHTML(this.props.body)}
 				</div>
 				<Link to={`/post/${this.props.id}`}>Read more</Link>
 			</div>

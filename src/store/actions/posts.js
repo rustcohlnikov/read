@@ -1,18 +1,27 @@
 import client from '../../plugins/client'
 import * as actionType from './actionTypes'
-import posts from '../../plugins/client/mock'
+import mock from '../../plugins/client/mock'
 
-export const loadPosts = () => {
-	return {
-		type: actionType.LOAD_POSTS_SUCCESS, 
-		payload: { posts }
+export const loadPosts = () => {	
+	return function (dispatch) {
+		dispatch(loadPostsBegin())
+		client
+			.get('/posts')
+			.then(response => {
+				dispatch(loadPostsSuccess(response.data))
+			})
 	}
 }
 
-// TODO: handle async post request
-/* export function loadPostsSuccess(posts) {  
+export function loadPostsSuccess(posts) {
 	return {
 		type: actionType.LOAD_POSTS_SUCCESS, 
-		payload: { posts }
+		posts
 	}
-} */
+}
+
+export function loadPostsBegin(posts) {
+	return {
+		type: actionType.LOAD_POSTS_BEGIN
+	}
+}

@@ -4,18 +4,17 @@ import {connect} from 'react-redux'
 const View = (props) => (
 	<div>
 		<h1>
-			{ props.post.title }
+			{  props.post && props.post.title }
 		</h1>
 		<p>
     View post {props.match.params.id}
 		</p>
 	</div>
 )
-
-const mapStateToProps = (state, props) => {
-	return {
-		post: state.posts.items.find((post) => post.id === props.match.params.id)
-	}
-}
-
-export default connect(mapStateToProps)(View)
+export default connect(
+	(state, props) => {
+		const post = state.posts.items.find((item) => {
+			item.id === props.match.params.id
+		})
+		return { post }
+	})(View)
