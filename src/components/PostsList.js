@@ -3,11 +3,12 @@ import {connect} from 'react-redux'
 import selectPosts from '../store/selectors/posts'
 
 import Post from './Post'
+import Spinner from './Spinner'
 
 const PostsList = (props) => (
 	<div>
 		<p>{props.error ? 'Error' : null}</p>
-		<p>{props.loading ? 'loading...' : null}</p>
+		<div className="text-center">{props.loading ? <Spinner/> : null}</div>
 		{
 			(!props.loading && !props.error && props.posts.length > 0) && props.posts.map((post) => {
 				return (<Post key={post.id} {...post} />)
