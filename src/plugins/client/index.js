@@ -1,8 +1,9 @@
 import axios from 'axios'
 
-//TODO: add config
 const client = axios.create({
-	baseURL: 'https://jsonplaceholder.typicode.com/'
+	baseURL: (process.env.NODE_ENV == 'production') && process.env.REACT_APP_API_URL
+		? process.env.REACT_APP_API_URL
+		: 'https://jsonplaceholder.typicode.com/'
 })
 
 export default client

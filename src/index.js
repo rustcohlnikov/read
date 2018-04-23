@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import AppRouter from './routes'
-import configureStore from './store/configureStore'
-import {loadPosts} from './store/actions/posts'
+import configureStore from 'Store/configureStore'
+import {loadPosts} from 'Store/actions/posts'
 
-import './styles/main.scss'
+import 'Styles/main.scss'
 
 import registerServiceWorker from './registerServiceWorker'
 

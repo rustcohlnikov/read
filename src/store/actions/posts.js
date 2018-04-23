@@ -1,4 +1,4 @@
-import client from '../../plugins/client'
+import client from 'Plugins/client'
 import * as actionType from './actionTypes'
 
 export const loadPosts = () => {	
