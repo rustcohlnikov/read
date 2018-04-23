@@ -12,7 +12,7 @@ class View extends React.Component {
 
 	render () {
 		return (
-			<div className="view">
+			<div className="view section">
 				<div className="view__meta row between-xs middle-xs">
 					<div className="col-xs">
 						<p className="view__arrow">

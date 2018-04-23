@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700|PT+Serif&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Zeyada');
-html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    color: rgba(0, 0, 0, .75);
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: .95rem;
-}
+
+$sans: 'Open Sans', sans-serif;
+$serif: 'PT Serif', Georgia, 'Cambria', 'Times New Roman', Times, serif;
+
+$size-xs: 0.75rem;
+$size-s: 0.8rem;
+$size-m: 0.9rem;
+$size-l: 2rem;
+$size-xl: 2.5rem;

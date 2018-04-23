@@ -1,5 +1,10 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {
+	BrowserRouter, 
+	Route, 
+	Switch, 
+	Redirect
+} from 'react-router-dom'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -12,7 +17,7 @@ const AppRouter = () => (
 		<div>
 			<div className="container">
 				<div className="row center-xs">
-					<div className="col-xs-8">
+					<div className="col-xs-7">
 						<Header/>
 						<div className="row start-xs">
 							<div className="col-xs">
@@ -23,10 +28,10 @@ const AppRouter = () => (
 								</Switch>
 							</div>
 						</div>
+						<Footer/>
 					</div>
 				</div>
 			</div>
-			<Footer/>
 		</div>
 	</BrowserRouter>
 )
