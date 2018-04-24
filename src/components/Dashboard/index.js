@@ -2,11 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import selectPosts from 'Store/selectors/posts'
 
+import style from './style.css'
+
 import Post from 'Components/Post'
 import Spinner from 'Components/Spinner'
 
 const Dashboard = (props) => (
-	<div className="section">
+	<div className={style.dashboard}>
 		{props.error ? <p>Error</p> : null}
 		{props.loading ? <div className="text-center"><Spinner/></div> : null}
 		{

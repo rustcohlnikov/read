@@ -5,6 +5,8 @@ import { animateScroll as scroll } from 'react-scroll'
 
 import {Link} from 'react-router-dom'
 
+import style from './style.css'
+
 class View extends React.Component {  
 	componentDidMount () {
 		scroll.scrollToTop()
@@ -12,10 +14,10 @@ class View extends React.Component {
 
 	render () {
 		return (
-			<div className="view section">
-				<div className="view__meta row between-xs middle-xs">
+			<div className={style.container}>
+				<div className="row between-xs middle-xs">
 					<div className="col-xs">
-						<p className="view__arrow">
+						<p className={style.arrow}>
 							<Link to="/">&larr;</Link>
 						</p>
 					</div>
@@ -23,10 +25,10 @@ class View extends React.Component {
 						<small className="text-muted">10/05/2018</small>
 					</div>
 				</div>	
-				<h2 className="view__title">
+				<h2 className={style.title}>
 					{ this.props.title }
 				</h2>
-				<div className="view__body">      
+				<div className={style.body}>      
 					{ this.props.body }
 				</div>
 			</div>

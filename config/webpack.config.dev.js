@@ -156,27 +156,6 @@ module.exports = {
 							cacheDirectory: true,
 						},
 					},
-					// SCSS Rule
-					{
-						test: /\.scss$/,
-						use: [
-							require.resolve('style-loader'),
-							{
-								loader: require.resolve('css-loader'),
-								options: {
-									importLoaders: 1,
-								},
-							},
-							{
-								loader: require.resolve('postcss-loader'),
-								options: {
-									// Necessary for external CSS imports to work
-									// https://github.com/facebookincubator/create-react-app/issues/2677
-									ident: 'postcss'
-								},
-							},
-						],
-					},
 					// "postcss" loader applies autoprefixer to our CSS.
 					// "css" loader resolves paths in CSS and adds assets as dependencies.
 					// "style" loader turns CSS into JS modules that inject <style> tags.
@@ -189,7 +168,9 @@ module.exports = {
 							{
 								loader: require.resolve('css-loader'),
 								options: {
+									modules: true,
 									importLoaders: 1,
+									localIdentName: '[name]__[local]__[hash:base64:5]'
 								},
 							},
 							{

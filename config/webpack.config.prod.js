@@ -158,41 +158,6 @@ module.exports = {
 							compact: true,
 						},
 					},
-					// SCSS Rule
-					{
-						test: /\.scss$/,
-						loader: ExtractTextPlugin.extract(
-							Object.assign(
-								{
-									fallback: {
-										loader: require.resolve('style-loader'),
-										options: {
-											hmr: false,
-										},
-									},
-									use: [
-										{
-											loader: require.resolve('css-loader'),
-											options: {
-												importLoaders: 1,
-												minimize: true,
-												sourceMap: shouldUseSourceMap,
-											},
-										},
-										{
-											loader: require.resolve('postcss-loader'),
-											options: {
-												// Necessary for external CSS imports to work
-												// https://github.com/facebookincubator/create-react-app/issues/2677
-												ident: 'postcss'
-											},
-										},
-									],
-								},
-								extractTextPluginOptions
-							)
-						),
-					},
 					// The notation here is somewhat confusing.
 					// "postcss" loader applies autoprefixer to our CSS.
 					// "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -220,8 +185,10 @@ module.exports = {
 										{
 											loader: require.resolve('css-loader'),
 											options: {
+												modules: true,
 												importLoaders: 1,
 												minimize: true,
+												localIdentName: '[name]__[local]__[hash:base64:5]',
 												sourceMap: shouldUseSourceMap,
 											},
 										},
