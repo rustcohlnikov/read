@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import selectPosts from '../store/selectors/posts'
+import selectPosts from 'Store/selectors/posts'
 
 import Post from 'Components/Post'
 import Spinner from 'Components/Spinner'
 
-const PostsList = (props) => (
+const Dashboard = (props) => (
 	<div className="section">
 		{props.error ? <p>Error</p> : null}
 		{props.loading ? <div className="text-center"><Spinner/></div> : null}
@@ -23,4 +23,4 @@ export default connect(
 		loading: state.posts.loading,
 		error: state.posts.error
 	})
-)(PostsList)
+)(Dashboard)

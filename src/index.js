@@ -7,7 +7,7 @@ import AppRouter from './routes'
 import configureStore from 'Store/configureStore'
 import {loadPosts} from 'Store/actions/posts'
 
-import 'Styles/main.scss'
+import 'Styles/main.css'
 
 import registerServiceWorker from './registerServiceWorker'
 
