@@ -13,6 +13,23 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const paths = require('./paths')
 const getClientEnvironment = require('./env')
 
+const jsxCompilationOptions = {
+	compilationOptions: {},
+	optimization: {
+		rewriteIdents: true,
+		mergeDeclarations: true,
+		removeUnusedStyles: true,
+		conflictResolution: true,
+		enabled: false,
+	},
+	aliases: {}
+}
+
+const CssBlocks = require('@css-blocks/jsx')
+const CssBlocksPlugin = require('@css-blocks/webpack').CssBlocksPlugin
+const CssBlockRewriter = new CssBlocks.Rewriter()
+const CssBlockAnalyzer = new CssBlocks.Analyzer(paths.appIndexJs, jsxCompilationOptions)
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath
@@ -188,6 +205,7 @@ module.exports = {
 												modules: true,
 												importLoaders: 1,
 												minimize: true,
+												camelCase: true,
 												localIdentName: '[name]__[local]__[hash:base64:5]',
 												sourceMap: shouldUseSourceMap,
 											},
@@ -197,7 +215,19 @@ module.exports = {
 											options: {
 												// Necessary for external CSS imports to work
 												// https://github.com/facebookincubator/create-react-app/issues/2677
-												ident: 'postcss'
+												ident: 'postcss',
+												plugins: () => [
+													require('postcss-flexbugs-fixes'),
+													autoprefixer({
+														browsers: [
+															'>1%',
+															'last 4 versions',
+															'Firefox ESR',
+															'not ie < 9', // React doesn't support IE8 anyway
+														],
+														flexbox: 'no-2009',
+													}),
+												],
 											},
 										},
 									],
@@ -229,6 +259,13 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new CssBlocksPlugin({
+			analyzer: CssBlockAnalyzer,
+			outputCssFile: 'blocks.css',
+			name: 'css-blocks',
+			compilationOptions: jsxCompilationOptions.compilationOptions,
+			optimization: jsxCompilationOptions.optimization
+		}),
 		// Makes some environment variables available in index.html.
 		// The public URL is available as %PUBLIC_URL% in index.html, e.g.:
 		// <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">

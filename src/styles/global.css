@@ -1,30 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|PT+Serif&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Zeyada');
-
-// Variables
-
-$sans: 'Open Sans', sans-serif;
-$serif: 'PT Serif', Georgia, 'Cambria', 'Times New Roman', Times, serif;
-
-$size-xs: 0.75rem;
-$size-s: 0.8rem;
-$size-m: 0.9rem;
-$size-l: 2rem;
-$size-xl: 2.5rem;
-
-$primary: #313131;
-$text: rgba(0, 0, 0, .75);
-$muted: #a0a0a0;
-
 // Base
 
 html {
   height: 100%;
   line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  color: $text;
-  font-family: $sans;
-  font-size: $size-m;
 }
 
 body {
@@ -35,23 +13,4 @@ a {
   color: inherit;
   text-decoration: none;
   background-color: transparent;
-}
-
-
-// Utilities
-
-.text-muted {
-    color: $muted;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.small {
-    font-size: $size-s;
 }
