@@ -9,7 +9,7 @@ import font from 'Styles/typography.css'
 class Post extends Component {
 	render () {
 		return (
-			<div className={style.container}>
+			<div className={style}>
 				<div className={style.heading}>
 					<small className={font.secondary}>10/05/2018</small>
 					<h2 className={`${style.title} ${font.sans} ${font.large}`}>

@@ -7,9 +7,6 @@ import AppRouter from './routes'
 import configureStore from 'Store/configureStore'
 import {loadPosts} from 'Store/actions/posts'
 
-import 'flexboxgrid/dist/flexboxgrid.css'
-import 'Styles/global.css'
-
 import registerServiceWorker from './registerServiceWorker'
 
 const store = configureStore()

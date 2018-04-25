@@ -1,15 +1,23 @@
 :scope {}
 
+.sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.serif {
+  font-family: 'PT Serif', Georgia, 'Cambria', 'Times New Roman', Times, serif;
+}
+
 .brand {
-  color: #313131;
+  color: var(--brand);
 }
 
 .primary {
-  color: rgba(0, 0, 0, .75);
+  color: var(--primary);
 }
 
 .secondary {
-  color: #a0a0a0;
+  color: var(--secondary);
 }
 
 .xs-size {
@@ -36,26 +44,10 @@
   font-size: .75rem; 
 }
 
-.text-muted {
-    color: var(--muted);
-}
-
 .text-center {
     text-align: center;
 }
 
 .text-right {
     text-align: right;
-}
-
-.small {
-    font-size: var(--size-s);
-}
-
-.sans {
-  font-family: 'Open Sans', sans-serif;
-}
-
-.serif {
-  font-family: 'PT Serif', Georgia, 'Cambria', 'Times New Roman', Times, serif;
 }

@@ -1,6 +1,8 @@
-.container {
+:scope {
+  block-name: Post;
   margin-bottom: 5rem;
 }
+
 .title {
   line-height: 1.2;
   margin: .5rem 0 0 0;
