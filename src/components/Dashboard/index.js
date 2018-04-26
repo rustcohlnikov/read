@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import selectPosts from 'Store/selectors/posts'
 
-import style from './style.css'
+import style from './style.scss'
 
 import Post from 'Components/Post'
 import Spinner from 'Components/Spinner'

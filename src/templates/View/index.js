@@ -5,7 +5,7 @@ import { animateScroll as scroll } from 'react-scroll'
 
 import {Link} from 'react-router-dom'
 
-import style from './style.css'
+import style from './style.scss'
 
 class View extends React.Component {  
 	componentDidMount () {
