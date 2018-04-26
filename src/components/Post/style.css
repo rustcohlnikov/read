@@ -1,13 +1,16 @@
-:scope {
-  block-name: Post;
+.container {
   margin-bottom: 5rem;
 }
-
 .title {
+  font-size: 2rem;
   line-height: 1.2;
   margin: .5rem 0 0 0;
   font-weight: 700;
   letter-spacing: -0.05ex;
+}
+.body {
+  font-family: $serif;
+  font-weight: normal;
 }
 .heading {
   margin-bottom: .5rem;

@@ -11,24 +11,6 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const getClientEnvironment = require('./env')
 const paths = require('./paths')
-const cssAssets = require('./css')
-
-const jsxCompilationOptions = {
-	compilationOptions: {},
-	optimization: {
-		rewriteIdents: true,
-		mergeDeclarations: true,
-		removeUnusedStyles: true,
-		conflictResolution: true,
-		enabled: false,
-	},
-	aliases: {}
-}
-
-const CssBlocks = require('@css-blocks/jsx')
-const CssBlocksPlugin = require('@css-blocks/webpack').CssBlocksPlugin
-const CssBlockRewriter = new CssBlocks.Rewriter()
-const CssBlockAnalyzer = new CssBlocks.Analyzer(paths.appIndexJs, jsxCompilationOptions)
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -179,25 +161,28 @@ module.exports = {
 					// "style" loader turns CSS into JS modules that inject <style> tags.
 					// In production, we use a plugin to extract that CSS to a file, but
 					// in development "style" loader enables hot editing of CSS.
-					// {
-					// 	test: /\.css$/,
-					// 	use: [
-					// 		require.resolve('style-loader'),
-					// 		{
-					// 			loader: require.resolve('css-loader'),
-					// 			options: {
-					// 			},
-					// 		},
-					// 		{
-					// 			loader: require.resolve('postcss-loader'),
-					// 			options: {
-					// 				// Necessary for external CSS imports to work
-					// 				// https://github.com/facebookincubator/create-react-app/issues/2677
-					// 				ident: 'postcss',
-					// 			},
-					// 		},
-					// 	],
-					// },
+					{
+						test: /\.css$/,
+						use: [
+							require.resolve('style-loader'),
+							{
+								loader: require.resolve('css-loader'),
+								options: {
+									modules: true,
+									importLoaders: 1,
+									localIdentName: '[name]__[local]__[hash:base64:5]'
+								},
+							},
+							{
+								loader: require.resolve('postcss-loader'),
+								options: {
+									// Necessary for external CSS imports to work
+									// https://github.com/facebookincubator/create-react-app/issues/2677
+									ident: 'postcss'
+								},
+							},
+						],
+					},
 					// "file" loader makes sure those assets get served by WebpackDevServer.
 					// When you `import` an asset, you get its (virtual) filename.
 					// In production, they would get copied to the `build` folder.
@@ -208,56 +193,11 @@ module.exports = {
 						// its runtime that would otherwise processed through "file" loader.
 						// Also exclude `html` and `json` extensions so they get processed
 						// by webpacks internal loaders.
-						exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+						exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/,/\.scss$/],
 						loader: require.resolve('file-loader'),
 						options: {
 							name: 'static/media/[name].[hash:8].[ext]',
 						},
-					},
-					{
-						test: /\.[j|t]s(x?)$/,
-						exclude: /node_modules/,
-						use: [
-
-							{
-								loader: require.resolve('babel-loader'),
-								options: {
-									presets: [require.resolve('babel-preset-react-app')],
-									cacheDirectory: true,
-									compact: true,
-								}
-							},
-
-							// Run the css-blocks plugin in its own dedicated loader because the react-app preset
-							// steps on our transforms' feet. This way, we are guaranteed a clean pass before any
-							// other transforms are done.
-							{
-								loader: require.resolve('babel-loader'),
-								options: {
-									plugins: [
-										require('@css-blocks/jsx/dist/src/transformer/babel').makePlugin({ rewriter: CssBlockRewriter }),
-									],
-									cacheDirectory: true,
-									compact: true,
-									parserOpts: {
-										plugins: [ 'jsx' ]
-									}
-								}
-							},
-
-							// The JSX Webpack Loader halts loader execution until after all blocks have
-							// been compiled and template analyses has been run. StyleMapping data stored
-							// in shared `rewriter` object.
-							{
-								loader: require.resolve('@css-blocks/webpack/dist/src/loader'),
-								options: {
-									analyzer: CssBlockAnalyzer,
-									rewriter: CssBlockRewriter
-								}
-							},
-
-
-						]
 					},
 				],
 			},
@@ -266,14 +206,6 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CssBlocksPlugin({
-			analyzer: CssBlockAnalyzer,
-			outputCssFile: 'blocks.css',
-			name: 'css-blocks',
-			compilationOptions: jsxCompilationOptions.compilationOptions,
-			optimization: jsxCompilationOptions.optimization
-		}),
-		cssAssets({minify: false, inlineSourceMaps: true}),
 		// Makes some environment variables available in index.html.
 		// The public URL is available as %PUBLIC_URL% in index.html, e.g.:
 		// <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
