@@ -3,14 +3,13 @@ import PropTypes from 'prop-types'
 import renderHTML from 'react-render-html'
 import {Link} from 'react-router-dom'
 import style from './style.scss'
-import font from 'Styles/typography.scss'
 
 class Post extends Component {
 	render () {
 		return (
 			<div className={style.container}>
 				<div className={style.heading}>
-					<small className={font.secondary}>10/05/2018</small>
+					<small className={style.date}>10/05/2018</small>
 					<h2 className={style.title}>
 						<Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
 					</h2>

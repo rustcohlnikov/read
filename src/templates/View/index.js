@@ -21,8 +21,8 @@ class View extends React.Component {
 							<Link to="/">&larr;</Link>
 						</p>
 					</div>
-					<div className="col-xs text-right">
-						<small className="text-muted">10/05/2018</small>
+					<div className="col-xs right">
+						<small className={style.date}>10/05/2018</small>
 					</div>
 				</div>	
 				<h2 className={style.title}>

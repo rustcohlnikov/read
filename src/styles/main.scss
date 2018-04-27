@@ -1,1 +1,7 @@
-@import './base.scss';
+@import './base/variables.scss';
+@import './base/typography.scss';
+@import './base/initial.scss';
+
+@import './layout/grid.scss';
+
+@import './components/post.scss';

@@ -1,0 +1,21 @@
+:global {
+  .post-title {
+    font-weight: $bold;
+    font-family: $sans;
+    margin: .5rem 0 0 0;  
+    letter-spacing: -0.05ex;
+  }
+  
+  .post-heading {
+    margin-bottom: .5rem;
+  }
+  
+  .post-body {
+    font-family: $serif;
+  }
+  
+  .post-date {
+    font-family: $serif;
+    color: $secondary;
+  }
+}

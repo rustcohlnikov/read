@@ -3,12 +3,15 @@
 $sans: 'Open Sans', sans-serif;
 $serif: 'PT Serif', Georgia, 'Cambria', 'Times New Roman', Times, serif;
 
-$size-xs: 0.75rem;
-$size-s: 0.8rem;
-$size-m: 0.9rem;
+$size-xs: .75rem;
+$size-s: .8rem;
+$size-m: .9rem;
 $size-l: 2rem;
 $size-xl: 2.5rem;
 
-$primary: #313131;
-$text: rgba(0, 0, 0, .75);
-$muted: #a0a0a0;
+$brand: #313131;
+$primary: rgba(0, 0, 0, .75);
+$secondary: #a0a0a0;
+
+$normal: 400;
+$bold: 700;

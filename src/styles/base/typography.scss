@@ -1,0 +1,38 @@
+:global {
+    .sans {
+        font-family: $sans;
+    }
+    .serif {
+        font-family: $serif;
+    }
+    .primary {
+        color: $primary;
+    }
+    .secondary {
+        color: $secondary;
+    }
+    .xs-size {
+        font-size: $size-xs;
+    }
+    .s-size {
+        font-size: $size-s;
+    }
+    .m-size {
+        font-size: $size-m;
+    }
+    .l-size {
+        font-size: $size-l;
+    }
+    .xl-size {
+        font-size: $size-xl;
+    }
+    .bolder {
+        font-weight: 700;
+    }
+    .center {
+        text-align: center;
+    }
+    .right {
+        text-align: right;
+    }
+}
