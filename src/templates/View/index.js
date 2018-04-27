@@ -6,7 +6,7 @@ import { animateScroll as scroll } from 'react-scroll'
 import {Link} from 'react-router-dom'
 
 
-import Post from 'Components/Post'
+import ViewPost from 'Components/ViewPost'
 import style from './style.scss'
 
 class View extends React.Component {  
@@ -24,7 +24,7 @@ class View extends React.Component {
 						</p>
 					</div>
 				</div>	
-				<Post {...this.props} view/>
+				<ViewPost {...this.props}/>
 			</div>
 		)
 	}

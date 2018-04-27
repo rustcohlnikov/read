@@ -4,7 +4,7 @@ import selectPosts from 'Store/selectors/posts'
 
 import style from './style.scss'
 
-import Post from 'Components/Post'
+import DashboardPost from 'Components/DashboardPost'
 import Spinner from 'Components/Spinner'
 
 const Dashboard = (props) => (
@@ -13,7 +13,7 @@ const Dashboard = (props) => (
 		{props.loading ? <div className="text-center"><Spinner/></div> : null}
 		{
 			(!props.loading && !props.error && props.posts.length > 0) && props.posts.map((post) => {
-				return (<Post key={post.id} {...post} />)
+				return (<DashboardPost key={post.id} {...post} />)
 			})
 		}
 	</div>
