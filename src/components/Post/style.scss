@@ -3,22 +3,26 @@
 }
 
 .title {
-  composes: post-title from global;
+  composes: bold from global;
+  composes: sans from global;
+  margin: .5rem 0 0 0;  
+  letter-spacing: -0.05ex;
   line-height: 1.2;
+}
+
+.heading {
+  margin-bottom: .5rem;
+}
+
+.body {
+  composes: serif from global;
+}
+
+.date {
+  composes: serif from global;
+  composes: secondary from global;
 }
 
 .bigger {
   composes: l-size from global;
-}
-
-.heading {
-  composes: post-heading from global;
-}
-
-.body {
-  composes: post-body from global;
-}
-
-.date {
-  composes: post-date from global;
 }
