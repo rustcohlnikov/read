@@ -16,14 +16,7 @@ class View extends React.Component {
 
 	render () {
 		return (
-			<div className={style.container}>
-				<div className="row between-xs middle-xs">
-					<div className="col-xs">
-						<p className={style.arrow}>
-							<Link to="/">&larr;</Link>
-						</p>
-					</div>
-				</div>	
+			<div className={style.container}>	
 				<ViewPost {...this.props}/>
 			</div>
 		)

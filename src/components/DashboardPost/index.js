@@ -5,11 +5,20 @@ import {Link} from 'react-router-dom'
 import classNames from 'classnames'
 
 import Post from 'Components/Post'
+import style from './style.scss'
 
 class DashboardPost extends Component {
 	render () {
 		return (
-			<Post {...this.props} />
+			<div>
+				<div className="row">
+					<div className="col-xs">
+						<small className={style.date}>10/05/2018</small>
+					</div>
+				</div>
+				<Post {...this.props} />
+			</div>
+			
 		)
 	}
 }

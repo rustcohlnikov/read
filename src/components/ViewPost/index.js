@@ -5,11 +5,25 @@ import {Link} from 'react-router-dom'
 import classNames from 'classnames'
 
 import Post from 'Components/Post'
+import style from './style.scss'
 
 class ViewPost extends Component {
 	render () {
 		return (
-			<Post {...this.props} view/>
+			<div>
+				<div className="row between-xs middle-xs">
+					<div className="col-xs-10">
+						<p className={style.arrow}>
+							<Link to="/">&larr;</Link>
+						</p>					
+					</div>
+					<div className="col-xs">
+						<small className={style.date}>10/05/2018</small>
+					</div>
+				</div>
+				<Post {...this.props} view/>
+			</div>
+			
 		)
 	}
 }

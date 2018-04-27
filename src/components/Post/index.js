@@ -11,7 +11,6 @@ class Post extends Component {
 		return (
 			<div className={style.container}>
 				<div className={style.heading}>
-					<small className={style.date}>10/05/2018</small>
 					<h2 className={classNames(style.title, {[style.bigger]: this.props.view})}>
 						<Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
 					</h2>
