@@ -7,6 +7,10 @@
   line-height: 1.2;
 }
 
+.bigger {
+  composes: l-size from global;
+}
+
 .heading {
   composes: post-heading from global;
 }

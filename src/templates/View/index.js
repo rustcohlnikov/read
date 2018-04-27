@@ -24,7 +24,7 @@ class View extends React.Component {
 						</p>
 					</div>
 				</div>	
-				<Post {...this.props} />
+				<Post {...this.props} view/>
 			</div>
 		)
 	}

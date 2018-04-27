@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import renderHTML from 'react-render-html'
 import {Link} from 'react-router-dom'
+import cn from 'classnames'
+
 import style from './style.scss'
 
 class Post extends Component {
@@ -10,7 +12,7 @@ class Post extends Component {
 			<div className={style.container}>
 				<div className={style.heading}>
 					<small className={style.date}>10/05/2018</small>
-					<h2 className={style.title}>
+					<h2 className={cn(style.title, {[style.bigger]: this.props.view})}>
 						<Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
 					</h2>
 				</div>
