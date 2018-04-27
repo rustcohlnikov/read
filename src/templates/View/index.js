@@ -5,6 +5,8 @@ import { animateScroll as scroll } from 'react-scroll'
 
 import {Link} from 'react-router-dom'
 
+
+import Post from 'Components/Post'
 import style from './style.scss'
 
 class View extends React.Component {  
@@ -21,16 +23,8 @@ class View extends React.Component {
 							<Link to="/">&larr;</Link>
 						</p>
 					</div>
-					<div className="col-xs right">
-						<small className={style.date}>10/05/2018</small>
-					</div>
 				</div>	
-				<h2 className={style.title}>
-					{ this.props.title }
-				</h2>
-				<div className={style.body}>      
-					{ this.props.body }
-				</div>
+				<Post {...this.props} />
 			</div>
 		)
 	}

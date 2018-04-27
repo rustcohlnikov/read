@@ -2,29 +2,6 @@
   min-height: 85vh;
 }
 
-.title {
-  composes: post-title from global;
-  composes: l-size from global;
-  margin: 0;
-  padding: 1rem 0 1rem 0;
-}
-
-.heading {
-  composes: post-heading from global;
-}
-
-.body {
-  composes: post-body from global;
-}
-
-.date {
-  composes: post-date from global;
-}
-
-.body p:first-child {
-  margin-top: 0;
-}
-
 .arrow {
   margin: 0;
   padding: 0;
