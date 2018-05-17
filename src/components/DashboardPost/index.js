@@ -11,11 +11,6 @@ class DashboardPost extends Component {
 	render () {
 		return (
 			<div>
-				<div className="row">
-					<div className="col-xs">
-						<small className={style.date}>10/05/2018</small>
-					</div>
-				</div>
 				<Post {...this.props} />
 			</div>
 			

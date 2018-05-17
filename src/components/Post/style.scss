@@ -4,9 +4,9 @@
 
 .title {
   composes: bold from global;
-  composes: sans from global;
-  margin: .5rem 0 0 0;  
-  letter-spacing: -0.05ex;
+  composes: serif from global;
+  composes: xl-size from global;
+  margin: .5rem 0 0 0;
   line-height: 1.2;
 }
 
@@ -15,7 +15,12 @@
 }
 
 .body {
-  composes: serif from global;
+  composes: sans from global;
+}
+
+.date {
+  composes: sans from global;
+  composes: secondary from global;
 }
 
 .bigger {

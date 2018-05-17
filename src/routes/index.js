@@ -15,10 +15,15 @@ import View from 'Templates/View'
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
+			<Header/>
 			<div className="container">
-				<div className="row center-xs">
+				<div className="row">
 					<div className="col-xs-7">
-						<Header/>
+						<div className="row start-xs">
+							<div className="col-xs">
+								
+							</div>
+						</div>
 						<div className="row start-xs">
 							<div className="col-xs">
 								<Switch>

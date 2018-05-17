@@ -1,13 +1,15 @@
 import client from 'Plugins/client'
+import {normalizePosts} from 'Plugins/adapter'
 import * as actionType from './actionTypes'
 
-export const loadPosts = () => {	
+export const loadPosts = () => {
 	return function (dispatch) {
 		dispatch(loadPostsBegin())
 		client
-			.get('/posts')
+			.getEntries()
 			.then(response => {
-				dispatch(loadPostsSuccess(response.data))
+				const posts = normalizePosts(response.items)
+				dispatch(loadPostsSuccess(posts))
 			})
 			.catch(error => {
 				dispatch(loadPostsError(error))
@@ -16,20 +18,13 @@ export const loadPosts = () => {
 }
 
 export function loadPostsSuccess(posts) {
-	return {
-		type: actionType.LOAD_POSTS_SUCCESS, 
-		posts
-	}
+	return {type: actionType.LOAD_POSTS_SUCCESS, posts}
 }
 
 export function loadPostsBegin(posts) {
-	return {
-		type: actionType.LOAD_POSTS_BEGIN
-	}
+	return {type: actionType.LOAD_POSTS_BEGIN}
 }
 
 export function loadPostsError(posts) {
-	return {
-		type: actionType.LOAD_POSTS_ERROR
-	}
+	return {type: actionType.LOAD_POSTS_ERROR}
 }

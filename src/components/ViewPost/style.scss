@@ -6,6 +6,7 @@
 }
 
 .date {
+  composes: right from global;
   composes: serif from global;
   composes: secondary from global;
 }

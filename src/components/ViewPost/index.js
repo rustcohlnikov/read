@@ -17,9 +17,6 @@ class ViewPost extends Component {
 							<Link to="/">&larr;</Link>
 						</p>					
 					</div>
-					<div className="col-xs">
-						<small className={style.date}>10/05/2018</small>
-					</div>
 				</div>
 				<Post {...this.props} view/>
 			</div>

@@ -1,9 +1,11 @@
-import axios from 'axios'
+import { contentful } from '../../config.js'
+import { createClient } from 'contentful'
 
-const client = axios.create({
-	baseURL: (process.env.NODE_ENV == 'production') && process.env.REACT_APP_API_URL
-		? process.env.REACT_APP_API_URL
-		: 'https://jsonplaceholder.typicode.com/'
-})
+const productionConfig = {
+	space: process.env.REACT_APP_SPACE,
+	accessToken: process.env.REACT_APP_TOKEN
+}
+
+const client = createClient(process.env.NODE_ENV == 'production' ? productionConfig : contentful)
 
 export default client
