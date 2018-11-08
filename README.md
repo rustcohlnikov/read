@@ -1,8 +1,13 @@
-# Empty Blog
-Another useless blog built with [React](https://github.com/facebook/react)
+# RE/AD
+Blog built with React, Redux and Contentful
 
 ## Setup
 
-`npm i`
+1. Rename `config.template.js` to `config.js`
+2. Add your Contentful credentials
+3. `npm i`
+4. `npm run start`
 
-`npm run start`
+## Demo
+
+Coming soon
