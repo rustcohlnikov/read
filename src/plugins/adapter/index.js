@@ -3,8 +3,8 @@ const normalizePosts = (posts) => {
 		id: post.sys.id,
 		title: post.fields.title,
 		body: post.fields.body,
-		createdAt: post.fields.createdAt,
-		updatedAt: post.fields.updatedAt,
+		createdAt: post.sys.createdAt,
+		updatedAt: post.sys.updatedAt,
 		author: post.fields.author,
 		cover: post.fields.image
 	}))
